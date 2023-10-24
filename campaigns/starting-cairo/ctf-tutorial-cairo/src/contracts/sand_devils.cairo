@@ -14,7 +14,7 @@ mod SandDevils {
 
     #[constructor]
     fn constructor(ref self: ContractState, count: u32) {
-        self.count.write(count);
+        self.count.write(0);
     }
     
     #[external(v0)]
@@ -26,7 +26,7 @@ mod SandDevils {
 
         fn slay(ref self: ContractState, amount: u32) {
             self.count.write(
-                0
+                self.count.read() - amount
             );
         }
         
