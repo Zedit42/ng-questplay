@@ -26,7 +26,7 @@ mod SandDevils {
 
         fn slay(ref self: ContractState, amount: u32) {
             self.count.write(
-                self.count.read() - 0
+                0
             );
         }
         
